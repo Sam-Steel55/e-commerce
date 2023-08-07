@@ -4,13 +4,14 @@ import { AddShoppingCart } from '@material-ui/icons';
 
 import useStyles from "./styles";
 
-const Product = ({product}) => {
+const Product = ({ product }) => {
   const classes = useStyles();
+
   return (
    <Card className={classes.root}>
     
     {/* image file of the product */}
-     <CardMedia className={classes.media} component="img" image="" title={product.name} />
+     <CardMedia className={classes.media} title={product.name} />
 {/* product information */}
             <CardContent>
               <div className={classes.cardContent}>
@@ -23,18 +24,18 @@ const Product = ({product}) => {
                 </Typography>
                </div>
 {/* product description */}
-              <Typography variant='h2' color='textSecondary'>
+              <Typography variant='body2' color='textSecondary'>
                {product.description}
               </Typography>
             </CardContent>
 
             <CardActions disableSpacing className={classes.CardActions}>
-                <IconButton aria-label='Add to Card'>
+                <IconButton aria-label='Add to Cart'>
                   <AddShoppingCart />
                 </IconButton>
             </CardActions>
    </Card>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;
