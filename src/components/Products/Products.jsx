@@ -8,6 +8,9 @@ import Product from './Product/Product';
 const products = [
     { id: 1, name: "Shoes", description: "Running shoes.", price: "$5" },
     { id: 2, name: "Macbook", description: "Apple Macbook", price: "$5" },
+    { id: 3, name: "Shoes", description: "Running shoes.", price: "$5" },
+    { id: 4, name: "Macbook", description: "Apple Macbook", price: "$5" },
+    
     // Add more products as needed
   ];
 
