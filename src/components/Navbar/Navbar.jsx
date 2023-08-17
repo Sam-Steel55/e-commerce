@@ -1,36 +1,40 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 
 import logo from "../../assets/Swift-Shop.png";
 import useStyles from "./styles";
 
-const Navbar = ({ totalItems }) => {
+const Navbar = ({ items }) => {
     const classes = useStyles();
 
-  return (
-    <>
-        <AppBar position='fixed' className={classes.appBar} color="inherit" > 
-            <Toolbar>
-                <Typography variant='h6' className={classes.appBar}>
-                    <img src={logo} alt='Commerce.js' height="25px" className={classes.image} />
-                    Shopmore
-                </Typography>
-                 <div className={classes.grow} />
-                 <div className={classes.button} >
-                    <IconButton aria-label='Show cart items' color='inherit'>
-                        <Badge overlap="rectangular" badgeContent={totalItems} color="secondary">
-                            <ShoppingCart />
-                        </Badge>
+    return (
+        <>
+            {/* AppBar with a fixed position */}
+            <AppBar position='fixed' className={classes.appBar} color="inherit" >
+                <Toolbar>
+                    {/* Logo and title */}
+                    <Typography variant='h6' className={classes.appBar}>
+                        <img src={logo} alt='Commerce.js' height="25px" className={classes.image} />
+                        Shopmore
+                    </Typography>
 
-                    </IconButton>
-                </div>
-                 
-            </Toolbar>
+                    {/* Spacer */}
+                    <div className={classes.grow} />
 
-        </AppBar>
-    </>
-  )
+                    {/* Shopping cart icon */}
+                    <div className={classes.button}>
+                        <IconButton aria-label='Show cart items' color='inherit'>
+                            {/* Badge with cart item count */}
+                            <Badge overlap="rectangular" badgeContent={items.total_items} color="secondary">
+                                <ShoppingCart />
+                            </Badge>
+                        </IconButton>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </>
+    )
 }
 
-export default Navbar
+export default Navbar;
