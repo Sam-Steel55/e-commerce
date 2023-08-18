@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
 
-import { Products, Navbar } from "./components";
+import { Products, Navbar, Cart } from "./components";
+
+
 
 const App = () => {
   // State to store fetched product data and cart information
@@ -31,10 +33,14 @@ const App = () => {
   const handleAddToCart = async (productId, quantity) => {
     try {
       setCart(await commerce.cart.add(productId, quantity));
+      console.log(cart);
     } catch (error) {
       console.log('Could not add product to cart:', error);
     }
   };
+
+  
+
 
   // Fetch initial product data and cart information on component mount
   useEffect(() => {
@@ -42,13 +48,15 @@ const App = () => {
     fetchCart();
   }, []);
 
-  console.log(cart); // Log cart information for debugging
 
-  return (
+
+ return (
     <div>
     
       <Navbar items={cart} />
-      <Products products={products} onAddToCart={handleAddToCart} />
+      {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
+
+      <Cart cart={cart} />
     </div>
   )
 }
