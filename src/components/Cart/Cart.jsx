@@ -51,6 +51,7 @@ const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
             type="button"
             className={classes.checkoutButton}
             color="primary"
+            component={Link} to="/checkout"
             
           >
             Checkout
