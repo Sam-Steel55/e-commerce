@@ -30,11 +30,12 @@ const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
         ))}
       </Grid>
 
-      <div className={classes.cartBottomElements}>
+      
         <div className={classes.cartDetails}>
           <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
         </div>
-        <div className={classes.cartButtons}>
+
+      
           <Button
             variant="contained"
             size="large"
@@ -45,6 +46,7 @@ const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
           >
             Empty Cart
           </Button>
+       
           <Button
             variant="contained"
             size="large"
@@ -56,11 +58,13 @@ const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
           >
             Checkout
           </Button>
-        </div>
-      </div>
+    
+    
     </>
   );
 
+  if (!cart.line_items) return "Loading...";
+  
   return (
     <Container>
       <div className={classes.toolbar} />

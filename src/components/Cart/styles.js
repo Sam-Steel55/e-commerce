@@ -1,46 +1,29 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
-
   title: {
-    marginTop: '10%',
-    '@media (max-Width: 767px)': {
-      paddingTop: '10%',
-    },
+    marginTop: "5%",
   },
   emptyButton: {
-    minWidth: '150px',
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: '5px',
+    minWidth: "150px",
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "5px",
     },
-    [theme.breakpoints.up('xs')]: {
-      marginRight: '20px',
+    [theme.breakpoints.up("xs")]: {
+      paddingLeft: "20px",
     },
   },
   checkoutButton: {
-    minWidth: '150px',
+    minWidth: "150px",
   },
   link: {
-    textDecoration: 'none',
+    textDecoration: "none",
   },
-
-  container: {
-    width: '75%',
-    position: 'relative',
-    left: '12.5%',
-  },
-  cartBottomElements: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
-  cartButtons: {
-    marginTop: '15px',
-    marginBottom: '20px',
-  },
-  cartDetails: {
-    marginTop: '30px',
+  cardDetails: {
+    display: "flex",
+    marginTop: "10%",
+    width: "100%",
+    justifyContent: "space-between",
   },
 }));
