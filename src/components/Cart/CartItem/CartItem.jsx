@@ -11,7 +11,7 @@ const CartItem = ({ item, onClickUpdate, onClickRemove }) => {
   const handleRemoveFromCart = (lineItemId) => onClickRemove(lineItemId);
 
   return (
-    <Card className="cart-item">
+    <Card>
       <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
       <CardContent className={classes.cardContent}>
         <Typography variant="h6">{item.name}</Typography>
