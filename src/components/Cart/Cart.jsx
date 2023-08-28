@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Typography, Button, Grid } from '@mui/material';
+import { Container, Typography, Button, Grid, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem/CartItem'; 
 import useStyles from './styles';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
   const classes = useStyles();
@@ -31,36 +32,32 @@ const Cart = ({ cart, onClickUpdate, onClickRemove, onClickEmpty }) => {
 
       
         <div className={classes.cardDetails}>
-          <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
+          <Typography variant="h5">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
         <div>
 
-      
-          <Button
-            variant="contained"
-            size="large"
-            type="button"
-            className={classes.emptyButton}
-            color="secondary"
-            onClick={onClickEmpty}
-          >
-            Empty Cart
-          </Button>
-       
-          <Button
-            variant="contained"
-            size="large"
-            type="button"
-            className={classes.checkoutButton}
-            color="primary"
-            component={Link} to="/checkout"
-            
-          >
-            Checkout
-          </Button>
+        <Stack direction="row" spacing={{ xs: 1, sm: 2 }} useFlexGap flexWrap="wrap">
+            <Button
+              variant="outlined"
+              size="medium"
+              type="button"
+              color="error"
+              className={classes.emptyCartButton}
+              startIcon={<DeleteIcon />}
+              onClick={onClickEmpty} >
+          Empty Cart
+            </Button>     
+            <Button
+              variant="contained"
+              size="medium"
+              type="button"
+              className={classes.checkoutButton}
+              color="primary"
+              component={Link} to="/checkout" >
+           Checkout
+            </Button>
+          </Stack>
         </div>
       </div>
-    
-    
     </>
   );
 

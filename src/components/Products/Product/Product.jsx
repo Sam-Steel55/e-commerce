@@ -18,7 +18,7 @@ const Product = ({ product, onAddToCart }) => {
           <Typography variant='h6' gutterBottom>
             {product.name}
           </Typography>
-          <Typography variant='h6'>
+          <Typography variant='h6' styles={{ padding: '2em' }}>
             {product.price.formatted_with_symbol}
           </Typography>
         </div>
@@ -26,7 +26,7 @@ const Product = ({ product, onAddToCart }) => {
       </CardContent>
 
       <CardActions disableSpacing className={classes.CardActions}>
-        <IconButton aria-label='Add to Cart' onClick={handleAddToCart}>
+        <IconButton color="secondary" aria-label='Add to Shopping Cart' onClick={handleAddToCart}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
